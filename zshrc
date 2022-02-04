@@ -1,38 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-#startup command
-
-#neofetch
-
-#ARCH lOGO
-#NC='\033[0m'
-#BLUE='\033[0;34m'
-#echo "${BLUE}      /\\"
-#echo "     /  \\"
-#echo "    /\\   \\"
-#echo "   /      \\"
-#echo "  /   ,,   \\"
-#echo " /   |  |  -\\"
-#echo "/_-''    ''-_\\"
-#echo "  ARCH ${NC}Linux   "
-
-neofetch --ascii_distro arch_small --disable title underline model shell resolution wm term icons cpu gpu cols
-
-
 # Path to your oh-my-zsh installation.
-export ZSH="/home/fernando/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="clean"
-#ZSH_THEME="gianu"
-#ZSH_THEME="gentoo"
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
 ZSH_THEME="cg"
+
+#USER
+neofetch --ascii_distro arch_small --disable title underline model shell resolution wm term icons cpu gpu cols
+export EDITOR='vim'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -41,21 +21,19 @@ ZSH_THEME="cg"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="false"
-#true
+#CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -67,11 +45,12 @@ CASE_SENSITIVE="false"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -95,7 +74,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,12 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias neofetchs="neofetch --source /home/fernando/Documents/sus.txt"
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias nbfc-stat="mono /opt/nbfc/nbfc.exe status --all"
-alias nbfc="mono /opt/nbfc/nbfc.exe"
-alias rnemo="sudo nemo"
-alias waifu2x="waifu2x-ncnn-vulkan"
+alias ls="exa -l -a --icons --header --git"
 alias restart-plasma="kquitapp5 plasmashell && kstart5 plasmashell"
 alias restart-plasma-f="kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell"
-alias auto-neofetch="neofetch --ascii_distro_small --disable host uptime shell resolution wm theme icons terminal"
+alias sch-zoom="firefox 'https://us02web.zoom.us/my/kelasxismakstagnes?pwd=b0lYRVpyemx2QlJZR0E4ci96Wnd0dz09'"
+alias clean-orphan="sudo pacman -Qtdq | sudo pacman -Rns -"
+alias clean-orphan-all="sudo pacman -Qttdq | sudo pacman -Rns -"
+alias yt-dl="python3 /home/fernando/git/goad-yt-dlp-helper/yt-dlp-helper.pyc"
+alias th="python3 /home/fernando/Documents/Python/python-script/Touhou.py"
+alias weather="curl wttr.in"
+alias calendar="cal -3"
