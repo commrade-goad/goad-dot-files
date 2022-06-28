@@ -21,6 +21,7 @@ set $term alacritty
 set $menu wofi_path | wofi --show=drun --prompt Run: | xargs swaymsg exec --
 
 # STARTUP
+exec /home/fernando/.config/sway/script/battery.sh
 exec /usr/bin/blueman-applet
 exec /usr/bin/autotiling
 exec export MOZ_ENABLE_WAYLAND=1
