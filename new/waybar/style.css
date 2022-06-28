@@ -1,6 +1,6 @@
 *{
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Noto Sans, Roboto, Helvetica, MesloLGS Nerd Font Mono;
+    font-family: Noto Sans, Helvetica, MesloLGS Nerd Font Mono;
     font-size: 14px;
     /* border-radius: 7px 7px 7px 7px */
 }
@@ -60,7 +60,9 @@ window#waybar.chromium {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    /*background-color: #eb4d4b; */
+    background-color: rgba(60,0,0,0.5);
+    box-shadow: inset 0 -2px #eb4d4b;
 }
 
 #mode {
