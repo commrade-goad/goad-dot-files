@@ -35,7 +35,7 @@ main () {
 			fi
 		elif [ $BATTSTATUS == "Charging" ]
 		then
-			ehco "Charging... (sleep for 5m)"
+			echo "Charging... (sleep for 5m)"
 			sleep 5m
 		fi
 		sleep 3
