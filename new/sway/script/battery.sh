@@ -15,28 +15,29 @@ main () {
 		check
 		echo "Battery status : $BATTSTATUS"
 		echo "Battery percentage : $BATTCAPACITY"
-		if [ $BATTSTATUS != "Charging" ]
-		then
-			if [ $BATTSTATUS != "Full" ]
-			then
-				if [[ $BATTCAPACITY > 75 ]]
-				then
-					echo "Enough... (sleep for 5m)"
-					sleep 5m
-				elif [[ $BATTCAPACITY < 30 ]]
-				then
-					echo "Low... (will notify again after 2m)"
-					dunstify -u 2 "Your Battery is lower than 30%. Please plug in the charger."
-					sleep 120
-				fi
-			else
-				echo "Full or Unknown.. (sleep for 5m)"
-				sleep 5m
-			fi
-		elif [ $BATTSTATUS == "Charging" ]
+		if [ $BATTSTATUS == "Charging" ]
 		then
 			echo "Charging... (sleep for 5m)"
 			sleep 5m
+		elif [ $BATTSTATUS == "Unknown" ]
+		then
+			echo "Unknown... (sleep for 5m)"
+			sleep 5m
+		elif [ $BATTSTATUS == "Full" ]
+		then
+			echo "Full... (sleep for 5m)"
+			sleep 5m
+		else
+			if [[ $BATTCAPACITY > 60 ]]
+			then
+				echo "$BATTCAPACITY > 60 (sleep for 5m)"
+				sleep 5m
+			elif [[ $BATTCAPACITY < 30 ]]
+			then
+				echo "Low... (will notify again after 2m)"
+				dunstify -u 2 "$BATTCAPACITY% Battery remaining, please plug in the charger." & mpv "$HOME/Downloads/batt-reminder.mp3" --no-video --volume=75
+				sleep 120
+			fi
 		fi
 		sleep 3
 	done
