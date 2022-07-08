@@ -325,10 +325,10 @@ bar {
 }
 
 # Color Scheme
-client.focused 		#87bbff #87bbff #87bbff
-client.focused_inactive #506c91 #506c91 #506c91
-client.unfocused        #506c91 #506c91 #506c91
-client.urgent           #cf3c3c #cf3c3c #cf3c3c
+client.focused 		#87bbff #87bbff #87bbff #87bbff
+client.focused_inactive #506c91 #506c91 #506c91 #506c91
+client.unfocused        #506c91 #506c91 #506c91 #506c91
+client.urgent           #cf3c3c #cf3c3c #cf3c3c #cf3c3c
 
 
 include /etc/sway/config.d/*
