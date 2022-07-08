@@ -22,9 +22,7 @@ set $menu wofi_path | wofi --show=drun --prompt Run: | xargs swaymsg exec --
 
 # STARTUP
 exec /home/fernando/.config/sway/script/battery.sh
-exec /usr/bin/blueman-applet
 exec /usr/bin/autotiling
-exec export MOZ_ENABLE_WAYLAND=1
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # LOCK SCREEN VAR
@@ -75,7 +73,7 @@ output * bg /home/fernando/Pictures/Random/koishi-wallpaper.jpg fill
    input <identifier> repeat_rate 30
 
    input "1739:52545:SYNA7DB5:01_06CB:CD41_Touchpad" {
-       dwt enabled
+       dwt disable
        tap enabled
        natural_scroll enabled
        middle_emulation enabled
@@ -130,7 +128,7 @@ bindsym Alt+Tab exec /home/fernando/.config/sway/script/task-switcher.py
 
 # Master Options
 
-set $exit "[s]leep, [p]oweroff, [r]eboot, [l]ogout, l[o]ck, [1]FHD, [2]HD"
+set $exit "[s]leep,[p]oweroff,[r]eboot,[l]ogout,l[o]ck,[1]FHD,[2]HD"
 mode $exit {
     bindsym --to-code {
         s exec $screenlock & systemctl suspend, mode "default"
@@ -262,7 +260,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# GAP & STUF
+# GAP & STUFF
 default_border pixel 2
 gaps inner 8
 

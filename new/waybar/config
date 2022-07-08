@@ -17,13 +17,13 @@
 	 //},
          "disable-scroll": true,
          "all-outputs": true,
-         "format":"{name} {icon}",
+         "format":"{name}{icon}",
          "format-icons": {
              "1": "",
              "2": "",
              "3": "",
              "4": "",
-             "5": "",
+             "5": "濫",
 	     "6": "濫",
 	     "7": "濫",
 	     "8": "濫",
@@ -87,8 +87,9 @@
     },
     "clock": {
         "timezone": "Asia/Jakarta",
+	"format": "{:%d/%m/%y  %H:%M }",
         "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
+        //"format-alt": "{:%d-%m-%Y}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -129,7 +130,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid}({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -163,10 +164,8 @@
 	  "format-icons":{
 		"default": " "
 	  },
-          //"on-click": "playerctl play-pause",
-          //"on-click-right": "playerctl stop",
-          "on-click-right": "playerctl play-pause",
-	  "on-click": "playerctl stop",
+          "on-click": "playerctl play-pause",
+          "on-click-right": "playerctl stop",
 	  "smooth-scrolling-threshold": 10,
           "on-scroll-up": "playerctl next",
           "on-scroll-down": "playerctl previous",

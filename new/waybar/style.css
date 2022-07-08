@@ -1,9 +1,16 @@
 *{
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Noto Sans, Helvetica, MesloLGS Nerd Font Mono;
+    font-family: Jetbrains Mono, MesloLGS Nerd Font Mono;
     font-size: 14px;
     /* border-radius: 7px 7px 7px 7px */
 }
+
+
+/* accent color : #87bbff */
+/* accent color lighter : #b0d2ff */
+/* red/urgent : #f53c3c */
+/* green/batt charging : #26A65B */
+
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.7);
@@ -60,9 +67,7 @@ window#waybar.chromium {
 }
 
 #workspaces button.urgent {
-    /*background-color: #eb4d4b; */
-    background-color: rgba(60,0,0,0.5);
-    box-shadow: inset 0 -2px #eb4d4b;
+    background-color: #f53c3c;
 }
 
 #mode {
@@ -145,7 +150,7 @@ window#waybar.chromium {
 @keyframes blink {
     to {
         background-color: transparent;
-	box-shadow: inset 0 -2px #87bbff;
+	box-shadow: inset 0 -2px transparent;
     }
 }
 
@@ -220,7 +225,7 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: rgba(0,0,0,0.3);
-    box-shadow: inset 0 -2px #eb4d4b;
+    box-shadow: inset 0 -2px #f53c3c;
 }
 
 #idle_inhibitor {
