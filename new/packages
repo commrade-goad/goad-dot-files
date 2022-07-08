@@ -11,8 +11,9 @@ dunst
 autotiling
 clipman
 pavucontrol
+catppuccin-gtk-theme
 meslo-nerd-font (not on repos)
-noto-fonts
+ttf-jetbrains-mono
 xdg-desktop-portal-wlr
 wlroots
 wl-clipboard
